@@ -1,8 +1,9 @@
 import 'package:dress_code_picker_demo/ui/ui_pickorder.dart';
 import 'package:flutter/material.dart';
+import 'dart:io' show Platform;
 
 class UIPreview extends StatefulWidget {
-  UIPreview({super.key});
+  const UIPreview({super.key});
   @override
   State<UIPreview> createState() {
     return _UIPreview();
@@ -15,7 +16,7 @@ class _UIPreview extends State<UIPreview> {
     return Scaffold(
         body: Container(
             alignment: Alignment.center,
-            child: Image(
+            child: const Image(
               image: AssetImage('assets/preview.png'),
             )),
         // floatingActionButtonLocation: FloatingActionButtonLocation.miniEndTop,
@@ -25,7 +26,7 @@ class _UIPreview extends State<UIPreview> {
         //     onPressed: () {},
         //   ),
         // ),
-        appBar: AppBar(actions: <Widget>[
+        appBar: AppBar(actions: const <Widget>[
           // IconButton(
           //   onPressed: () {},
           //   icon: Icon(Icons.shop),
@@ -39,15 +40,15 @@ class _UIPreview extends State<UIPreview> {
                 width: 200,
                 height: 50,
                 alignment: Alignment.center,
-                child: Text("\$ 696"),
+                child: const Text("\$ 696"),
               ),
-              Spacer(),
+              const Spacer(),
               IconButton(
                 onPressed: () {},
-                icon: Icon(Icons.save),
+                icon: const Icon(Icons.save),
               ),
               IconButton(
-                icon: Icon(Icons.shopping_cart),
+                icon: const Icon(Icons.shopping_cart),
                 onPressed: () {
                   Navigator.push(
                     context,

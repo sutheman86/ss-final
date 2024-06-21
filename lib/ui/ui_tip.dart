@@ -1,7 +1,9 @@
+import 'package:dress_code_picker_demo/services/navigation.dart';
 import 'package:dress_code_picker_demo/ui/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:dress_code_picker_demo/ui/ui_home.dart';
 import 'package:dress_code_picker_demo/data/data_wiki.dart';
+import 'package:provider/provider.dart';
 
 class UITips extends StatefulWidget {
   UITips({super.key});
@@ -116,7 +118,7 @@ class _UITips extends State<UITips> {
                         ),
                       ),
                     ),
-                    Spacer(
+                    const Spacer(
                       flex: 1,
                     ),
                     Expanded(
@@ -126,17 +128,14 @@ class _UITips extends State<UITips> {
                           width: AppBar().preferredSize.height,
                           height: AppBar().preferredSize.height,
                           child: FloatingActionButton(
-                              child: Text("OK"),
-                              onPressed: () {
-                                Navigator.pushReplacement(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => UIHome()));
-                              }),
-                        ),
-                      ),
-                    ),
-                    Spacer(
+                              child: const Text("OK"),
+															onPressed: () => Provider.of<NavigationService>(context, listen: false)
+																.replace('home'),
+														),
+													),
+												),
+										),
+                    const Spacer(
                       flex: 1,
                     ),
                     Expanded(

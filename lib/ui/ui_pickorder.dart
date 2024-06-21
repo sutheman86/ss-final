@@ -15,6 +15,7 @@ class _UIPickOrder extends State<UIPickOrder> {
   @override
   build(context) {
     return Scaffold(
+      /*
       body: ListView.builder(
         itemCount: 20,
         padding: EdgeInsets.all(20.0),
@@ -22,12 +23,28 @@ class _UIPickOrder extends State<UIPickOrder> {
           return dressCodeSets.createItem(context, index);
         },
       ),
+      */
       appBar: AppBar(
         backgroundColor: AppThemeData().colorScheme.secondary,
         foregroundColor: AppThemeData().colorScheme.onSecondary,
         title: Text("Cart"),
         centerTitle: true,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
       ),
+
+      body: ListView.builder(
+        itemCount: 20,
+        padding: EdgeInsets.all(20.0),
+        itemBuilder: (context, index) {
+          return dressCodeSets.createItem(context, index);
+        },
+      ),
+
       bottomNavigationBar: BottomAppBar(
         child: Row(
           children: <Widget>[
